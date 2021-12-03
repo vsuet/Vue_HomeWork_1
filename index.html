@@ -13,6 +13,10 @@
             opacity: 0.6;
             cursor: not-allowed;
         }
+        .button{
+            display: flex;
+            justify-content: center;
+        }
         .sign {text-align: center; border: 1px black solid}
         header{background-color: lightskyblue}
     </style>
@@ -33,7 +37,10 @@
     </div>
 
 </div>
-<button type="button" class="disabled">Оформить заказ</button>
+<div class="button">
+    <button type="button" class="disabled">Оформить заказ</button>
+</div>
+
 
 <script src="https://unpkg.com/vue@next"></script>
 <script>
