@@ -8,11 +8,21 @@
             display: flex;
             justify-content: space-evenly;
         }
+        .disabled
+        {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
         .sign {text-align: center; border: 1px black solid}
+        header{background-color: lightskyblue}
     </style>
 </head>
 <body>
-
+<header>
+    <div>
+        <p>Общее количество:</p>
+    </div>
+</header>
 <div id="app">
 
     <div>
@@ -23,7 +33,7 @@
     </div>
 
 </div>
-
+<button type="button" class="disabled">Оформить заказ</button>
 
 <script src="https://unpkg.com/vue@next"></script>
 <script>
