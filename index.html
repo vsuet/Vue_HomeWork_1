@@ -21,21 +21,34 @@
         header{background-color: lightskyblue; color: white}
     </style>
 </head>
-<body>
+<body  id="app">
 <header>
     <h1>
         Карточки продуктов
     </h1>
     <div>
-        <p>Общее количество:</p>
+        <p>Общее количество: {{head}}</p>
     </div>
 </header>
-<div id="app">
-
+<div>
     <div>
         <figure>
             <img src="https://cdnimg.rg.ru/img/content/206/16/91/NIK_0544_d_850.jpg" alt="image" height="500" width="500" class="image">
             <figcaption class="sign"> Укажите количество <button v-on:click="sub_age()">-</button> {{ age }} <button v-on:click="add_age()">+</button></figcaption>
+        </figure>
+    </div>
+
+    <div>
+        <figure>
+            <img src="https://cdnimg.rg.ru/img/content/206/16/91/NIK_0544_d_850.jpg" alt="image" height="500" width="500" class="image">
+            <figcaption class="sign"> Укажите количество <button v-on:click="sub_one()">-</button> {{ one }} <button v-on:click="add_one()">+</button></figcaption>
+        </figure>
+    </div>
+
+    <div>
+        <figure>
+            <img src="https://cdnimg.rg.ru/img/content/206/16/91/NIK_0544_d_850.jpg" alt="image" height="500" width="500" class="image">
+            <figcaption class="sign"> Укажите количество <button v-on:click="sub_two()">-</button> {{ two }} <button v-on:click="add_two()">+</button></figcaption>
         </figure>
     </div>
 
@@ -49,11 +62,25 @@
 <script>
     Vue.createApp({
         data() {
-            return { age: 0 }
+            return {
+                two: 0,
+                one: 0,
+                age: 0,
+                head: 0
+            }
         },
+
         methods: {
+            add_two() { this.two++; },
+            sub_two() { if(this.two > 0) this.two--; },
+
+            add_one() { this.one++; },
+            sub_one() { if(this.one > 0) this.one--; },
+
             add_age() { this.age++; },
-            sub_age() { if(this.age > 0) this.age--; }
+            sub_age() { if(this.age > 0) this.age--; },
+
+
         }
     }).mount('#app');
 </script>
