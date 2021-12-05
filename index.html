@@ -27,7 +27,7 @@
         Карточки продуктов
     </h1>
     <div>
-        <p>Общее количество: {{head}}</p>
+        <p>{{ sayHi() }}</p>
     </div>
 </header>
 <div>
@@ -80,8 +80,10 @@
             add_age() { this.age++; },
             sub_age() { if(this.age > 0) this.age--; },
 
-
-        }
+            sayHi(){
+                return `Общее количество: ${this.one + this.age + this.two}`;
+            },
+        },
     }).mount('#app');
 </script>
 </body>
