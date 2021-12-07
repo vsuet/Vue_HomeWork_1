@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="price">
+            <p>Общая стоимость: {{number * 200 + number1 * 500 + number2 * 650}}</p>
+            <p>Количество товара: {{number + number1 + number2}}</p>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <img src="https://avatars.mds.yandex.net/i?id=ec7f9d6955e98dde268f418b427ba134-4421334-images-thumbs&n=13&exp=1" alt="">
+                <p>Цена: 200р</p>
+                <button v-on:click="number++">+</button>
+                <d class="">{{number}}</d>
+                <button v-on:click="if(number>0) number--;">-</button>
+            </div>
+            <div class="card">
+                <img src="https://ae01.alicdn.com/kf/H4921250a0de647c5a259c2de8558208b7/-.jpg_q50.jpg" alt="">
+                <p>Цена: 500р</p>
+                <button v-on:click="number1++">+</button>
+                <d class="">{{number1}}</d>
+                <button v-on:click="if(number1>0) number1--;">-</button>
+            </div>
+            <div class="card">
+                <img src="https://ae01.alicdn.com/kf/HTB19p9oweySBuNjy1zdq6xPxFXat/-.jpg" alt="">
+                <p>Цена: 650р</p>
+                <button v-on:click="number2++">+</button>
+                <d class="">{{number2}}</d>
+                <button v-on:click="if(number2>0) number2--;">-</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {number:0,number1:0,number2:0,},
+        });
+    </script>
+</body>
+</html>
