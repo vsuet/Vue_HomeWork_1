@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body id="app">
+	<header>
+		<h1>Карточки продуктов</h1>
+		<p>{{ total_order() }}</p>
+	</header>
+
+	<main>
+		<div>
+			<figure>
+				<img src="https://image.winudf.com/v2/image/Y29tLndLdW1wdWxhblRva29PbmxpbmVfMzc5NjA3Ml9zY3JlZW5zaG90c18wXzI3NjRlNTU2/screen-0.jpg?h=500&amp;fakeurl=1&amp;type=.jpg" alt="Карточка товара 1">
+				<figcaption>Укажите количество <button v-on:click="remove_order_1()">-</button> {{ order_1 }} <button v-on:click="add_order_1()">+</button></figcaption>
+			</figure>
+		</div>
+		<div>
+			<figure>
+				<img src="https://image.winudf.com/v2/image/Y29tLndLdW1wdWxhblRva29PbmxpbmVfMzc5NjA3Ml9zY3JlZW5zaG90c18wXzI3NjRlNTU2/screen-0.jpg?h=500&amp;fakeurl=1&amp;type=.jpg" alt="Карточка товара 2">
+				<figcaption>Укажите количество <button v-on:click="remove_order_2()">-</button> {{ order_2 }} <button v-on:click="add_order_2()">+</button></figcaption>
+			</figure>
+		</div>
+		<div>
+			<figure>
+				<img src="https://image.winudf.com/v2/image/Y29tLndLdW1wdWxhblRva29PbmxpbmVfMzc5NjA3Ml9zY3JlZW5zaG90c18wXzI3NjRlNTU2/screen-0.jpg?h=500&amp;fakeurl=1&amp;type=.jpg" alt="Карточка товара 3">
+				<figcaption>Укажите количество <button v-on:click="remove_order_3()">-</button> {{ order_3 }} <button v-on:click="add_order_3()">+</button></figcaption>
+			</figure>
+		</div>
+	</main>
+
+	<script src="https://unpkg.com/vue@next"></script>
+	<script>
+    Vue.createApp({
+        data() {
+            return {
+                order_1: 0,
+                order_2: 0,
+                order_3: 0
+            }
+        },
+
+        methods: {
+            add_order_1() { this.order_1++; },
+            remove_order_1() { if(this.order_1 > 0) this.order_1--; },
+
+            add_order_2() { this.order_2++; },
+            remove_order_2() { if(this.order_2 > 0) this.order_2--; },
+
+            add_order_3() { this.order_3++; },
+            remove_order_3() { if(this.order_3 > 0) this.order_3--; },
+
+            total_order(){
+                return `Общее количество: ${this.order_1 + this.order_2 + this.order_3}`;
+            },
+        },
+    }).mount('#app');
+</script>
+</body>
+</html>
